@@ -1,0 +1,124 @@
+
+/*
+* * Titles
+*/
+.reveal h1 {
+	font-size: 1.6em;
+}
+.reveal h2 {
+	font-size: 1.4em;
+}
+.reveal h3 {
+	font-size: 1.2em;
+}
+.reveal h4 {
+	font-size: 1em;
+}
+.reveal h5 {
+	font-size: 0.8em;
+}
+.reveal h6 {
+	font-size: 0.6em;
+}
+
+/*
+* * Background
+*/
+.reveal .slide-background {
+	background-color: #D7E0E0;
+}
+
+/*
+* * Pictures
+*/
+.reveal figure img {
+	margin-bottom: 0px;
+}
+
+.reveal figure figcaption {
+	font-size: 0.6em;
+	font-style: italic;
+	color: #839191;
+}
+
+/*
+* * Generic
+*/
+.reveal .small {
+	font-size: 0.8em;
+}
+
+.reveal .list-title {
+	display: block; 
+	text-align: left;
+}
+
+.reveal section img {
+ 	border: none;
+}
+
+/*
+* * First Page
+*/
+#first-page--header {
+	display: flex; 
+	justify-content: space-between;
+}
+
+#first-page--header img {
+	height: 120px; 
+	border: none; 
+	background: inherit; 
+	box-shadow: none;
+}
+
+#first-page--header img:nth-of-type(2) {
+	height: 80px;
+}
+
+/*
+* * Context 
+*/
+
+/* Company */
+.reveal figure {
+	text-align: center;
+	margin: auto;
+}
+
+#sct-company figure{
+	text-align: center;
+	margin: auto;
+	width: 50%;
+}
+
+#sct-ctxt-maestro--2 figure{
+	width: 95%;
+}
+
+#sct-ctxt-web--2, #sct-ctxt-web--3 {
+	margin-top: -30px;
+}
+
+#sct-ctxt-web--2 figure {
+	width: 55%;
+}
+
+#sct-ctxt-web--3 figure {
+	width: 85%;
+}
+
+#sct-ctxt-web--4 figure {
+	width: 45%;
+}
+
+#sct-work h3 {
+	margin: -30px 0 0px 0;
+}
+
+#sct-work--ckeditor figure {
+	width: 70%;
+}
+#sct-work--scans--2 figure {
+	width: 55%;
+}

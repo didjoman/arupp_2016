@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/serif.css">
+		<link rel="stylesheet" href="style.css">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- **** Cover *** -->
+				<section>
+					<header id="first-page--header">
+						<img src="assets/ensimag_logo.png" /> 
+						<img src="assets/supralog_logo.jpg" />
+					</header>
+					<h3>Projet de Fin d'Études</h3>
+					
+					<br />
+					
+					<h2>Architecture et développement Java backend pour une solution d'e-santé</h2>
+					<br />
+					
+					<h4>Alexandre Rupp</h4>
+					<h5>3A - Filière Ingénierie des Systèmes d'Information - 13/09/2016</h5>
+				</section>
+
+				<!-- **** Plan *** -->
+				<section id="sct-plan">
+					<h2>Plan</h2>
+					<ul>
+						<li>Contexte du stage</li> <!-- Groupe, entreprise, projet-->
+						<li>Présentation du projet</li>
+						<li>Problématique</li>
+						<li>Solutions mises en place</li>
+						<li>Conclusion</li> <!-- Enseignements, objectifs atteints -->
+					</ul>
+				</section>
+
+				<!-- **** Contexte du stage *** -->
+				<section id="sct-context">
+					<h2>Contexte du stage</h2>
+					<section id="sct-company">
+						<h3>L'entreprise</h3>
+						<ul>
+							<li>La technopole de Sophia Antipolis</li>
+							<li>Le groupe IDLOG (Idea & Supralog)</li> <!-- 2002, 1987 et 1997 -->
+							<li>Supralog :
+								<ul>
+									<li>Progiciel (Intrassoc & Topaze)</li>
+									<li>Technologie (Silex) </li>
+									<li>Conseil (Amadeus, Air France, Pro BTP etc.)</li>
+								</ul>
+							</li> 
+						</ul>
+						<br /> <br />
+						<figure>
+							<img src="assets/supralog_building.jpg" style="display: block; margin: auto; width: 60%;"/>
+							<figcaption>Locaux de Supralog à Sophia Antipolis</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h3>L'équipe</h3>
+						<ul>
+							<li>6 personnes 
+								<ul>
+									<li>1 chef d'équipe</li>
+									<li>2 développeurs à temps plein</li>
+									<li>1 apprenti</li>
+									<li>1 stagiaire (moi)</li>
+								</ul>
+							</li>
+							<li>Méthodologie Scrum adaptée.</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- **** Présentation du projet *** -->
+				<section id="sct-context">
+					<h2>Présentation du projet</h2>
+					<section id="sct-ctx-sesam">
+						<h3>Sesam Vitale</h3>
+						<ul>
+							<li><strong>1993:</strong> Création du GIE SESAM-Vitale</li>
+							<li><strong>1994:</strong> Expérimentation cartes vitales </li>
+							<li><strong>1996:</strong> Cahier des charges SESAM-Vitale V1.0</li>
+							<li><strong>1998:</strong> 
+								<ul>
+									<li>Premiers agréments des progiciels d'élaboration des FSE <span class="small">(Feuille de Soins Électronique)</span></li>
+									<li>Déploiement des cartes vitales</li>
+								</ul>
+							</li>
+							<li><strong>Depuis:</strong> 
+								<ul>
+									<li>Gestion des complémentaires, DRE <span class="small">(Demande de Remboursement)</span>, SCOR <span class="small">(SCan Ordonnance), mise à jours des cartes vitales etc.</span></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section id="sct-ctxt-maestro--1">
+						<h3>Topaze</h3>
+						<ul>
+							<li>Création en 1997</li>
+							<li>Agrément SESAM Vitale</li>
+							<li>Pour les métiers du paramédical (infirmiers, kinésithérapeutes, sages-femmes, ortophonistes etc.)</li>
+							<li>Fonctionnalités :
+								<ul>
+									<li>Création et télétransmission des FSE <span class="small">(Feuille de Soins Électroniques)</span></li>
+									<li>Dossier médical du patient</li>
+									<li>Comptabilité du cabinet</li>
+									<li>Gestion des SCOR <span class="small">(SCan ORdonnance)</span></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section id="sct-ctxt-maestro--2">
+						<figure>
+							<img src="assets/maestro.png">
+							<figcaption>Capture d'écran du logiciel Maestro</figcaption>
+						</figure>
+					</section>
+					<section id="sct-ctxt-web--1">
+						<h3>Topaze Web</h3>
+							<ul>
+								<li>Début du projet en 2015</li>
+								<li>
+									<strong>Objectifs:</strong> 
+									<ul>
+										<li>Version web de Topaze</li>
+										<li>Nouveau code</li>
+										<li>Mêmes Fonctionnalités</li>
+										<li>Ergonomie</li>
+										<li>Agrément SESAM Vitale</li>
+										<li>Migration des donneés</li>
+									</ul>
+								</li>
+							</ul>
+					</section>
+					<section id="sct-ctxt-web--2">
+							<ul>
+								<li> <strong>Architecture 3-Tiers :</strong>
+									<figure>
+										<img src="assets/architecture1.png">
+										<figcaption>Architecture 3-Tiers utilisée</figcaption>
+									</figure>
+								</li>
+							</ul>
+					</section>
+					<section id="sct-ctxt-web--3">
+						<figure>
+							<img src="assets/architecture5.png">
+							<figcaption>Architecture détaillée</figcaption>
+						</figure>
+					</section>
+					<section id="sct-ctxt-web--4">
+							<ul>
+								<li> <strong>Technologies :</strong>
+									<figure>
+										<img src="assets/technos3.png">
+										<figcaption>Technologies utilisées</figcaption>
+									</figure>
+								</li>
+							</ul>
+					</section>
+				</section>
+
+				<!-- **** Problématique *** -->
+				<section id="sct-problem">
+					<h2>Problématique</h2>
+						<strong>"Permettre la gestion du dossier médical d'un patient."</strong><br/>
+						<strong class="list-title">Travail attendu :</strong>
+						<ul>
+							<li>Analyse de l'existant (Topaze Maestro)</li>
+							<li>Etude de la faisabilité des fonctionnalités</li>
+							<li>Pour chaque fonctionnalité :
+								<ul>
+									<li>Discussion du besoin</li>
+									<li>Proposition d'une solution</li>
+									<li>Spécification du modèle métier (BDD)</li>
+									<li>Spécification de l'API REST</li>
+									<li>Spécification des interfaces utilisateurs (si besoin)</li>
+									<li>Implémentation</li>
+								</ul>
+							</li>
+						</ul>
+						
+
+					
+				</section>				
+
+				<!-- **** Travail réalisé *** -->
+				<section id="sct-work">
+					<h2>Travail réalisé</h2>
+					<section id="sct-work-analyse">
+						<strong class="list-title">Analyse de l'existant :</strong>
+						<ul>
+							<li>Liste des documents</li>
+							<li>Gestion des documents (lecture, modification, edition, suppression)</li>
+							<li>Gestion des différents types de documents</li>
+							<li>Edition des documents textuels:
+								<ul>
+									<li>Editeur de texte</li>
+									<li>Galerie d'images intégrée</li>
+									<li>Bibliothèque de modèles intégrée</li>
+									<li>Champs génériques</li>
+								</ul>
+							</li>
+							<li>Gestion des scans de documents</li>
+						</ul>
+					</section>
+					<section id="sct-work--list-docs--1">
+						<h3>Liste et gestion des documents</h3>
+						<figure>
+							<img src="assets/documents.png"/>
+							<figcaption>Diagramme illustrant les différents types de documents.</figcaption>
+						</figure>
+						<ul>
+							<li>2 principaux types de documents</li>
+							<li>Usage de PostgreSQL & MongoDB GridFS</li>
+							<li>Usage du générateur de code pour les entités et DAOs</li>
+							<li>Implémentation dans topaze Rest (services, controller, composants métiers etc.)</li>
+							<li>Implémentation du MVC dans Topaze Webapp</li>
+						</ul>
+					</section>
+					<section id="sct-work--list-docs--1">
+						<h3>Liste et gestion des documents</h3>
+						<figure>
+							<img src="assets/dossier_medical.png"/>
+							<figcaption>Dossier médical implémenté dans Topaze Web.</figcaption>
+						</figure>
+					</section>
+					<section id="sct-work--ckeditor--1">
+						<h3>Editeur de texte : CKEditor</h3>
+						<ul>
+							<li>Choix d'une solutions, en fonction de : 
+							<ul>
+								<li>Nombre de contributeurs et utilisateurs</li>
+								<li>Ancienneté du projet</li>
+								<li>Support proposé</li>
+								<li>Licence</li>
+								<li>Fonctionnalités et possibilité de personnaliser</li>
+							</ul>
+							</li> <!-- critères: nb utilisateurs & contributeurs, ancienneté, support, licence, fonctionnalités, possibilité de personnalisation -->
+							<li>Intégration du composant (Javascript <-> Java)</li>
+						</ul>
+					</section>
+					<section id="sct-work--ckeditor--2">
+						<h3>Editeur de texte : CKEditor</h3>
+						<figure>
+							<img src="assets/editor2.png"/>
+							<figcaption>CKEditor intégré à Topaze Web.</figcaption>
+						</figure>
+					</section>
+					<section id="sct-work--ckeditor--3">
+						<h3>Editeur de texte : Les champs génériques</h3>
+						<strong class="list-title">Fonctionnement :</strong>
+						<ul>
+							<li>Choix dans une arborescence</li>
+							<li>Insertion de la balise</li>
+							<li>Remplacement par la valeur (à la sauvegarde)</li>
+						</ul>
+
+						<strong class="list-title">Réalisation :</strong>
+						<ul style="margin-left: -30px">
+							<li>Liaison des données stockée en classes</li>
+							<li>Introspection de Java</li>
+							<li>Utilisation du moteur de gabari "Velocity" </li>
+							<li>Remplacement en 3 phases : <br />Code <-> Notation pointée <-> donnée</li>
+						</ul>
+					</section>
+					<section id="sct-work--ckeditor--4">
+						<h3>Editeur de texte : Galerie de modèles de textes</h3>
+						<ul>
+							<li>Sauvegarde des documents textes (avec champs génériques)</li>
+							<li>Arborescence de documents
+								<figure>
+									<img src="assets/directory_entities_concept.png"/>
+									<figcaption>Modèle UML du système de fichiers.</figcaption>
+								</figure>
+							</li>
+							<li>Création d'un tag JSF (réutilisable)</li>
+						</ul>
+						
+					</section>
+					<section id="sct-work--galery">
+						<h3>Editeur de texte : Galerie d'images</h3>
+						<figure>
+							<img src="assets/galerie.png"/>
+							<figcaption>Galerie d'images de CKEditor.</figcaption>
+						</figure>
+					</section>
+					<section id="sct-work--scans--1">
+						<h3>Numérisation de documents</h3>
+						<ul>
+							<li>Serveur Sesame</li>
+							<li>Driver Pyvital</li>
+							<li>Librairies PyTwain et Pyllow de Python</li>
+						</ul>
+						<figure>
+							<img src="assets/sesame.png"/>
+							<figcaption>Composants intervenants lors d'un scan.</figcaption>
+						</figure>
+					</section>
+					<section id="sct-work--scans--2">
+						<h3>Numérisation de documents</h3>
+						<figure>
+							<img src="assets/scan.png"/>
+							<figcaption>Outil de numérisation de documents.</figcaption>
+						</figure>
+					</section>
+					<section id="sct-work--others">
+						<h3>Autres tâches</h3>
+						<ul>
+							<li>Réalisation d'un installateur windows pour PyVital</li>
+							<li>Authentification à Pyvital par poste utilisateur</li>
+						</ul>
+					</section>
+				</section>
+				
+				<!-- **** Conclusion *** -->
+				<section id="sct-conclu">
+					<h2>Conclusion</h2>
+				</section>
+
+				<!-- **** Cover *** -->
+				<!--
+				<section id="sct-context">
+					<h2>Contexte du stage</h2>
+				</section>
+				-->
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
