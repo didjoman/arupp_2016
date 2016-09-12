@@ -26,10 +26,10 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- **** Cover *** -->
-				<section>
+				<section id="first-page">
 					<header id="first-page--header">
 						<img src="assets/ensimag_logo.png" /> 
-						<img src="assets/supralog_logo.jpg" />
+						<img src="assets/supralog_logo3.png" />
 					</header>
 					<h3>Projet de Fin d'Études</h3>
 					
@@ -97,20 +97,28 @@
 				<section id="sct-context">
 					<h2>Présentation du projet</h2>
 					<section id="sct-ctx-sesam">
-						<h3>Sesam Vitale</h3>
+						<h3 style="margin-top: -20px;">Sesam Vitale</h3>
 						<ul>
-							<li><strong>1993:</strong> Création du GIE SESAM-Vitale</li>
-							<li><strong>1994:</strong> Expérimentation cartes vitales </li>
-							<li><strong>1996:</strong> Cahier des charges SESAM-Vitale V1.0</li>
-							<li><strong>1998:</strong> 
+							<li><strong>Objectif:</strong> Dématérialiser les feuilles de soins.</li>
+							<li><strong>Enjeu principal:</strong> Le coût <span class="small">(FSP: 1,74€ -> FSE: 0,27€)</span>.</li>
+							<!-- Programme de dématérialisation des feuilles de soins pour l'assurance maladie en France, qui repose sur la carte vitale.-->
+							<li><strong>Historique:</strong> 
 								<ul>
-									<li>Premiers agréments des progiciels d'élaboration des FSE <span class="small">(Feuille de Soins Électronique)</span></li>
-									<li>Déploiement des cartes vitales</li>
-								</ul>
-							</li>
-							<li><strong>Depuis:</strong> 
-								<ul>
-									<li>Gestion des complémentaires, DRE <span class="small">(Demande de Remboursement)</span>, SCOR <span class="small">(SCan Ordonnance), mises à jour des cartes vitales etc.</span></li>
+									<li><strong>1993:</strong> Création du GIE SESAM-Vitale</li>
+									<li><strong>1996:</strong> Cahier des charges SESAM-Vitale V1.0</li>
+									<li><strong>1998:</strong> 
+										<ul>
+											<li>Agrément des premiers progiciels</li> <!--des progiciels d'élaboration des FSE <span class="small">(Feuille de Soins Électronique)</span> -->
+											<li>Déploiement des cartes vitales</li>
+										</ul>
+									</li>
+									<li><strong>Depuis:</strong> 
+										<ul>
+											<li>Gestion des complémentaires</li>
+											<li>Mises à jour des cartes vitales</li>
+											<!-- tiers payant, DRE <span class="small">(Demande de Remboursement)</span>, SCOR <span class="small">(SCan Ordonnance), mises à jour des cartes vitales etc.</span> -->
+										</ul>
+									</li>
 								</ul>
 							</li>
 						</ul>
@@ -118,10 +126,10 @@
 					<section id="sct-ctxt-maestro--1">
 						<h3>Topaze</h3>
 						<ul>
-							<li>Création en 1997</li>
-							<li>Agrément SESAM Vitale</li>
-							<li>Pour les métiers du paramédical (infirmiers, kinésithérapeutes, sages-femmes, ortophonistes etc.)</li>
-							<li>Fonctionnalités :
+							<!-- <li>1994: Création</li> -->
+							<li>1er logiciel agréé SESAM-Vitale<br/>&nbsp; <br/></li>
+							<li><strong>Cible:</strong> les métiers du paramédical</li> <!-- (infirmiers, kinésithérapeutes, sages-femmes, ortophonistes etc.) -->
+							<li><strong>Fonctionnalités :</strong>
 								<ul>
 									<li>Création et télétransmission des FSE <span class="small">(Feuille de Soins Électroniques)</span></li>
 									<li>Dossier médical du patient</li>
@@ -139,71 +147,72 @@
 					</section>
 					<section id="sct-ctxt-web--1">
 						<h3>Topaze Web</h3>
-							<ul>
-								<li>Début du projet en 2015</li>
-								<li>
-									<strong>Objectifs:</strong> 
-									<ul>
-										<li>Version web de Topaze</li>
-										<li>Nouveau code</li>
-										<li>Mêmes fonctionnalités</li>
-										<li>Ergonomie</li>
-										<li>Agrément SESAM Vitale</li>
-										<li>Migration des données</li>
-									</ul>
-								</li>
-							</ul>
+						<ul>
+							<li>Début du projet en 2015 <br />&nbsp;<br /></li>
+							<li>
+								<strong>Objectifs:</strong> 
+								<ul>
+									<li>Version web de Topaze</li>
+									<li>Nouveau code</li>
+									<li>Mêmes fonctionnalités</li>
+									<li>Ergonomie</li>
+									<li>Agrément SESAM Vitale</li>
+									<li>Migration des données</li>
+								</ul>
+							</li>
+						</ul>
 					</section>
 					<section id="sct-ctxt-web--2">
-							<ul>
-								<li> <strong>Architecture 3-Tiers :</strong>
-									<figure>
-										<img src="assets/architecture1.png">
-										<figcaption>Architecture 3-Tiers utilisée</figcaption>
-									</figure>
-								</li>
-							</ul>
+						<ul>
+							<li> <strong>Architecture 3-Tiers :</strong>
+								<figure>
+									<img src="assets/architecture1.png">
+									<figcaption>Architecture 3-Tiers (simplifiée)<br/>
+									<span class="small">(Schéma de Tom Veniat, utilisé avec son accord).</span></figcaption>
+								</figure>
+							</li>
+						</ul>
 					</section>
 					<section id="sct-ctxt-web--3">
 						<figure>
 							<img src="assets/architecture5.png">
-							<figcaption>Architecture détaillée</figcaption>
+							<figcaption>
+								Architecture détaillée<br/>
+								<span class="small">(Schéma de Tom Veniat, utilisé avec son accord).</span>
+							</figcaption>
 						</figure>
 					</section>
 					<section id="sct-ctxt-web--4">
-							<ul>
-								<li> <strong>Technologies :</strong>
-									<figure>
-										<img src="assets/technos3.png">
-										<figcaption>Technologies utilisées</figcaption>
-									</figure>
-								</li>
-							</ul>
+						<ul>
+							<li> <strong>Technologies :</strong>
+								<figure>
+									<img src="assets/technos3.png">
+									<figcaption>Technologies utilisées</figcaption>
+								</figure>
+							</li>
+						</ul>
 					</section>
 				</section>
 
 				<!-- **** Problématique *** -->
 				<section id="sct-problem">
 					<h2>Problématique</h2>
-						<strong>"Permettre la gestion du dossier médical d'un patient."</strong><br/>
-						<strong class="list-title">Travail attendu :</strong>
-						<ul>
-							<li>Analyse de l'existant (Topaze Maestro)</li>
-							<li>Etude de la faisabilité des fonctionnalités</li>
-							<li>Pour chaque fonctionnalité :
-								<ul>
-									<li>Discussion du besoin</li>
-									<li>Proposition d'une solution</li>
-									<li>Spécification du modèle métier (BDD)</li>
-									<li>Spécification de l'API REST</li>
-									<li>Spécification des interfaces utilisateurs (si besoin)</li>
-									<li>Implémentation</li>
-								</ul>
-							</li>
-						</ul>
-						
-
-					
+					<strong>"Permettre la gestion du dossier médical d'un patient."</strong><br/>
+					<strong class="list-title">Travail attendu :</strong>
+					<ul>
+						<li>Analyse de l'existant (Topaze Maestro)</li>
+						<li>Etude de la faisabilité des fonctionnalités</li>
+						<li>Pour chaque fonctionnalité :
+							<ul>
+								<li>Discussion du besoin</li>
+								<li>Proposition d'une solution</li>
+								<li>Spécification du modèle métier (BDD)</li>
+								<li>Spécification de l'API REST</li>
+								<li>Spécification des interfaces utilisateurs (si besoin)</li>
+								<li>Implémentation</li>
+							</ul>
+						</li>
+					</ul>
 				</section>				
 
 				<!-- **** Travail réalisé *** -->
@@ -213,7 +222,7 @@
 						<strong class="list-title">Analyse de l'existant :</strong>
 						<ul>
 							<li>Liste des documents</li>
-							<li>Gestion des documents (lecture, modification, édition, suppression)</li>
+							<li>Gestion des documents <span class="small">(lecture, modification, édition, suppression)</span></li>
 							<li>Gestion des différents types de documents</li>
 							<li>Édition des documents textuels:
 								<ul>
@@ -269,23 +278,35 @@
 							<figcaption>CKEditor intégré à Topaze Web.</figcaption>
 						</figure>
 					</section>
-					<section id="sct-work--ckeditor--3">
+					<section id="sct-work--ckeditor--3" style="font-size: 0.9em;">
 						<h3>Editeur de texte : Les champs génériques</h3>
-						<strong class="list-title">Fonctionnement :</strong>
+						<br />
 						<ul>
-							<li>Choix dans une arborescence</li>
-							<li>Insertion de la balise</li>
-							<li>Remplacement par la valeur (à la sauvegarde)</li>
-						</ul>
-
-						<strong class="list-title">Réalisation :</strong>
-						<ul style="margin-left: -30px">
-							<li>Liaison des données stockée en classes</li>
-							<li>Introspection de Java</li>
-							<li>Utilisation du moteur de gabari "Velocity" </li>
-							<li>Remplacement en 3 phases : <br />Code <-> Notation pointée <-> donnée</li>
+							<li>
+								<strong>But :</strong>
+								Mise à disposition de données issues de la Base.
+							</li>
+							<li>
+								<strong class="list-title">Fonctionnement :</strong>
+								<ul>
+									<li>Choix dans une arborescence</li>
+									<li>Insertion de la balise</li>
+									<li>Remplacement par la valeur (à la sauvegarde)</li>
+								</ul>
+							</li>
+							<li>
+								<strong class="list-title">Réalisation :</strong>
+								<ul>
+									<li>Liaison des données stockée en classes</li>
+									<li>Introspection de Java</li>
+									<li>Utilisation du moteur de gabari "Velocity" </li>
+									<li>Remplacement en 3 phases : <br />Code <-> Notation pointée <-> donnée</li>
+								</ul>
+							</li>
+							
 						</ul>
 					</section>
+					<!-- TODO: Champs génériques = données de l'appli / Galerie: données perso.-->
 					<section id="sct-work--ckeditor--4">
 						<h3>Editeur de texte : Galerie de modèles de textes</h3>
 						<ul>
@@ -313,6 +334,7 @@
 							<li>Serveur Sesame</li>
 							<li>Driver Pyvital</li>
 							<li>Librairies PyTwain et Pyllow de Python</li>
+							<li>Intégration d'un cropper</li>
 						</ul>
 						<figure>
 							<img src="assets/sesame.png"/>
@@ -335,9 +357,29 @@
 					</section>
 				</section>
 				
-				<!-- **** Conclusion *** -->
+				<!-- *** Conclusion *** -->
 				<section id="sct-conclu">
 					<h2>Conclusion</h2>
+					<ul>
+						<li>Développement du <strong>dossier médical</strong> et fonctionnalités connexes</li>
+						<li>
+							Montée en compétence sur les <strong>technologies Java</strong> <span class="small">(Java 8, Java EE, JSF, SPRING (IOC, AOP, MVc), Hibernate)</span>.
+						</li>
+						<li><strong>Architecture intéressante</strong></li>
+						<li>
+							<strong>Aspects métiers</strong> liés à la sécurité sociale.
+						</li>
+						<li>
+							Complémentarité avec le stage précédent
+						</li>
+						<li>
+							Travail dans une <strong>petite entreprise</strong> & activité d'<strong>édition logiciel</strong>.
+						</li> <!-- Complète projet professionnel : technologies robuste ds petite boite qui fait édition logicielle vs javascript ds grosse boite de service-->
+						<li>
+							<strong>Un CDI</strong> à l'issue du stage.
+						</li>
+						<!-- Moi content et la boite aussi -->
+					</ul>
 				</section>
 
 				<!-- **** Cover *** -->
